@@ -3,7 +3,7 @@ import { productInterface, products } from "../models/products-model";
 import { orderInterface, orders } from "../models/orders-model";
 
 export const getOrders = (req: Request, res: Response) => {
-    res.status(200).json({ message: "Post ditemukan", data: orders })
+    res.status(200).json({ message: "Orders ditemukan", data: orders })
 }
 
 export const createOrder = (req: Request, res: Response) => {
@@ -56,9 +56,9 @@ export const updateOrder = (req: Request, res: Response) => {
     const id = Number(req.params.id)
     const data: orderInterface = req.body
 
-    const index = orders.findIndex(product => product.id === id)
+    const index = orders.findIndex(order => order.id === id)
     if (index === -1) {
-        return res.status(404).json({ message: "Order tidak ditemukan" })
+        return res.status(404).json({ message: "order tidak ditemukan" })
     }
 
     console.log('ini index: ', index)

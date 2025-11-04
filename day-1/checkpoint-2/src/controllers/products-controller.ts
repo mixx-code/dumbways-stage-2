@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { productInterface, products } from "../models/products-model";
 
 export const getProducts = (req: Request, res: Response) => {
-    res.status(200).json({ message: "Post ditemukan", data: products })
+    res.status(200).json({ message: "Products ditemukan", data: products })
 }
 
 export const createProduct = (req: Request, res: Response) => {
