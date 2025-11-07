@@ -19,13 +19,13 @@ export const createProduct = async (req: Request, res: Response) => {
             return res.status(401).json({ message: "anda bukan supplier, tidak dapat add product" })
         }
 
-        const { productName, harga, userId }: Product = req.body
+        const { productName, harga }: Product = req.body
 
         const addproduct = await prisma.product.create({
             data: {
                 productName,
                 harga,
-                userId
+                userId : decodedToken.id
             }
         })
 
